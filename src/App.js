@@ -13,6 +13,7 @@ function App() {
     <div>
       <h1>A react application</h1>
       <p>Enter your name and email address and click submit</p>
+      <p>Then check the table below</p>
       <MyForm onSubmit={handleSubmit} />
       <DataTable data={data} />
     </div>

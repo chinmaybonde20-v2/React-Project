@@ -22,7 +22,7 @@ jobs:
         env:
           AWS_S3_BUCKET: ${{ secrets.react-project-v3 }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AKIA25GBOPHLCF7KW6HN }}
-          AWS_SECRET_ACCESS_KEY: ${{secrets.feW0ypwLAN17ZF92/mw6emyjSmGvUkquQOH6D42R}}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.feW0ypwLAN17ZF92/mw6emyjSmGvUkquQOH6D42R }}
           AWS_REGION: ${{ secrets.ap-south-1 }}
           SOURCE_DIR: build/
       - name: Invalidate CloudFront cache
