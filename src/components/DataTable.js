@@ -6,8 +6,8 @@ const DataTable = ({ data }) => {
     <table className="data-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Email</th>
+          <th>User Name</th>
+          <th>Email Address: </th>
         </tr>
       </thead>
       <tbody>

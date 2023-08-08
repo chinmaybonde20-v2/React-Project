@@ -11,7 +11,9 @@ function App() {
 
   return (
     <div>
-      <h1>Simple React Application for learning </h1>
+      <h1>A react application for learning </h1>
+      <p>Enter your name and email address and click submit</p>
+      <p>Then check the table below and click submit</p>
       <MyForm onSubmit={handleSubmit} />
       <DataTable data={data} />
     </div>
