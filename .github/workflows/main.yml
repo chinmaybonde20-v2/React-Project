@@ -1,0 +1,36 @@
+name: Deploy to CloudFront
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Build application
+        run: npm run build
+      - name: Deploy to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.react-project-v3 }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AKIA25GBOPHLCF7KW6HN }}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.feW0ypwLAN17ZF92/mw6emyjSmGvUkquQOH6D42R}}
+          AWS_REGION: ${{ secrets.ap-south-1 }}
+          SOURCE_DIR: build/
+      - name: Invalidate CloudFront cache
+        uses: dawidd6/action-cloudfront-invalidate@v1
+        with:
+          distribution-id: ${{ secrets.EBI31LR7WW39I }}
+          paths: '/*'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AKIA25GBOPHLCF7KW6HN }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.feW0ypwLAN17ZF92/mw6emyjSmGvUkquQOH6D42R }}
+          AWS_REGION: ${{ secrets.ap-south-1 }}
