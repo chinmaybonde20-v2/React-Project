@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div>
-      <h1>Simple React Application</h1>
+      <h1>Simple React Application for learning </h1>
       <MyForm onSubmit={handleSubmit} />
       <DataTable data={data} />
     </div>
