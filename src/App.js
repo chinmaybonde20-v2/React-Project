@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('http://172.16.10.116:8080/health');
+        const response = await axios.get('http://172.16.10.116:8080');
         setApiData(response.data);
       } catch (error) {
         console.error('An error occurred:', error);
@@ -19,7 +19,7 @@ function App() {
     }
     fetchData();
     console.log(apiData);
-})
+},[apiData])
 
   const [data, setData] = useState([]);
 
