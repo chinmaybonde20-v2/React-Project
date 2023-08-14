@@ -3,15 +3,14 @@ import MyForm from './components/MyForm';
 import DataTable from './components/DataTable';
 import axios from 'axios';
 
-
-
 function App() {
   //Calling api using Axios
   const [apiData, setApiData] = useState('');
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('http://172.16.10.116:8080');
+        const response = await axios.get('http://springboot-health-api-alb-243191324.us-east-1.elb.amazonaws.com');
+        //http://172.16.12.109:8080/health
         setApiData(response.data);
       } catch (error) {
         console.error('An error occurred:', error);

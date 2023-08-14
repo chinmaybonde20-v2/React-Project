@@ -15,8 +15,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "sync":"aws s3 sync ./build s3://react-project-v3/",
-    "invalidate" : "aws cloudfront create-invalidation --distribution-id EBI31LR7WW39I --paths /* ",
+    "sync":"aws s3 sync ./build s3://cloud-front-bucket1/",
+    "invalidate" : "aws cloudfront create-invalidation --distribution-id E3VLEKEFLPFBFW --paths /* ",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   }, 
