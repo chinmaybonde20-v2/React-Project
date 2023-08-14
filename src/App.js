@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('http://springboot-health-api-alb-243191324.us-east-1.elb.amazonaws.com');
+        const response = await axios.get('http://springboot-health-api-alb-243191324.us-east-1.elb.amazonaws.com/health');
         //http://172.16.12.109:8080/health
         setApiData(response.data);
       } catch (error) {
