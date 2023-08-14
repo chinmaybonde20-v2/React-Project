@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('http://172.16.10.116:8080');
+        const response = await axios.get('http://springboot-healthapi-alb-268591155.ap-south-1.elb.amazonaws.com/health');
         setApiData(response.data);
       } catch (error) {
         console.error('An error occurred:', error);
